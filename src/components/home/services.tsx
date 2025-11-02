@@ -31,7 +31,7 @@ export default function Services() {
                             <span className="text-red-600">SERVICES</span>
                         </h2>
                         <a
-                            href="./appointments.html"
+                            href="./appointments"
                             className="bg-gray-800 text-white px-4 py-2 rounded-full flex items-center gap-2 hover:bg-red-600 transition"
                         >
                             Schedule Online Today
