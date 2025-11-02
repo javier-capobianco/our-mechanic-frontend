@@ -1,17 +1,31 @@
-import Script from "next/script";
-export default function NavBar() {
+"use client";
+import { useState } from "react";
+import Image from "next/image";
 
-    return (<>
+export default function NavBar() {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    return (
         <nav className="flex px-4 border-b md:shadow-lg items-center relative">
+            {/* Logo */}
             <div className="text-lg font-bold md:py-0 py-4">
                 <a href="/">
-                    <img src="OurMechanicLogo-1.png" width="175px" />
+                    <Image
+                        src="/OurMechanicLogo-1.png"
+                        alt="Our Mechanic Logo"
+                        width={175}
+                        height={40}
+                        priority
+                    />
                 </a>
             </div>
-            {/* MENU UL */}
+
+            {/* MENU */}
             <ul
                 id="menu"
-                className="border-t md:px-2 ml-auto md:flex md:space-x-2 absolute md:relative top-full left-0 right-0 bg-white md:bg-transparent hidden md:flex border-b sm:border-none text-center text-lg"
+                className={`border-t md:px-2 ml-auto md:flex md:space-x-2 absolute md:relative top-full left-0 right-0 bg-white md:bg-transparent 
+          border-b sm:border-none text-center text-lg transition-all duration-300 ease-in-out 
+          ${menuOpen ? "block" : "hidden"} md:flex`}
             >
                 <li>
                     <a
@@ -54,10 +68,13 @@ export default function NavBar() {
                     </a>
                 </li>
             </ul>
-            {/* HAMBURGER */}
-            <div
+
+            {/* HAMBURGER ICON */}
+            <button
                 id="menu-toggle"
-                className="ml-auto md:hidden text-gray-500 cursor-pointer"
+                onClick={() => setMenuOpen((prev) => !prev)}
+                className="ml-auto md:hidden text-gray-500 cursor-pointer p-2 rounded-md hover:bg-gray-100 focus:outline-none"
+                aria-label="Toggle Menu"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -72,21 +89,7 @@ export default function NavBar() {
                         strokeLinejoin="round"
                     />
                 </svg>
-            </div>
+            </button>
         </nav>
-        {/* Inline Script */}
-      <Script 
-        id="navbar-inline-script"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            document.getElementById("menu-toggle").addEventListener("click", function () {
-            const menu = document.getElementById("menu");
-            menu.classList.toggle("hidden");
-          });
-          `,
-        }}
-      />
-    </>
     );
 }
