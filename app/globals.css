@@ -1,18 +1,22 @@
 @import "tailwindcss";
 
 @layer utilities {
-      /* Hide scrollbar for Chrome, Safari and Opera */
-      .no-scrollbar::-webkit-scrollbar {
-          display: none;
-      }
-     /* Hide scrollbar for IE, Edge and Firefox */
-      .no-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
-    }
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
 
-nav ul li:hover{
-    font: bold;
-    border-bottom: red 1px;
+nav ul li:hover {
+  font: bold;
+  border-bottom: #ED2424 1px;
+}
+
+input[type="checkbox"]:checked {
+  accent-color: #ED2424;
 }
