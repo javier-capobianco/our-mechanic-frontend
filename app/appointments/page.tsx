@@ -255,7 +255,7 @@ export default function Appointment() {
         {/* Submit */}
         <button
           type="submit"
-          className="w-full bg-red-500 text-white py-2 rounded-md font-semibold hover:bg-red-600 transition"
+          className="w-full bg-our-mechanic-red text-white py-2 rounded-md font-semibold hover:bg-red-600 transition cursor-pointer"
         >
           Submit Appointment
         </button>

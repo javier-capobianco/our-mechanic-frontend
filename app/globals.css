@@ -20,3 +20,7 @@ nav ul li:hover {
 input[type="checkbox"]:checked {
   accent-color: #ED2424;
 }
+
+.bg-our-mechanic-red{
+ background-color: #ED2424;
+}
